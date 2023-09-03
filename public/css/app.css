@@ -1,0 +1,23 @@
+:root{
+    --main-color: rgb(81, 192, 229);
+}
+
+nav{
+    background-color: var(--main-color);
+}
+
+main{
+    margin-top: 4rem;
+}
+
+.products .card img{
+    height: 180px;
+    padding: 8px;
+}
+.products .card .btn, .add, .btn-sm{
+    color: white;
+}
+
+.add:hover,.btn-sm:hover{
+    color: white;
+}
