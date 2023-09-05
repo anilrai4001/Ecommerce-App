@@ -57,9 +57,10 @@ const products = [
 
 ];
 
+async function seedDB(){
+    await Product.deleteMany({});
+    await Product.insertMany(products);
+    console.log('Products Seeded');
+}
 
-
-Product.insertMany(products)
-    .then(() => {
-        console.log('Product Seeded');
-    });
+seedDB();

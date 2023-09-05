@@ -19,7 +19,15 @@ const productSchema = mongoose.Schema({
     desc: {
         type: String,
         trim: true
-    }
+    },
+    reviews: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+    ]
+
+    
 });
 
 

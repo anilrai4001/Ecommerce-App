@@ -25,6 +25,8 @@ app.use(methodOverride('_method'));
 
 const productRoutes = require('./routes/product');
 app.use(productRoutes);
+const reviewRoutes = require('./routes/review');
+app.use(reviewRoutes);
 
 
 app.listen(port,()=>{
