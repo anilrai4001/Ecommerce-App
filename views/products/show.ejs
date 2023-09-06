@@ -22,7 +22,7 @@
         <h1 class="display-6 text-center mb-5">
             Leave Your Review
         </h1>
-        <form action="/products/<%=product._id%>/review" method="post">
+        <form action="/products/<%=product._id%>/review" method="post" novalidate class="needs-validation">
             <fieldset class="starability-basic">
                     <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
                     <input type="radio" id="first-rate1" name="rating" value="1" />
@@ -40,7 +40,7 @@
 
             <div class="mb-3">
                 <label class="form-label" for="comment">Comment</label>
-                <textarea class="form-control" name="comment" id="comment" rows="3"></textarea>
+                <textarea class="form-control" name="comment" id="comment" rows="3" required></textarea>
             </div>
 
             <button type="submit" class="btn btn-info btn-sm ">Submit</button>

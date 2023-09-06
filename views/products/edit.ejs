@@ -2,25 +2,25 @@
 
 <div class="row">
     <div class="col-md-6 mx-auto my-5">
-        <form action="/products/<%=product.id%>?_method=PATCH" method="POST">
+        <form action="/products/<%=product.id%>?_method=PATCH" method="POST" class="needs-validation" novalidate>
             <div class="mb-3">
                 <label for="name" class="form-label">Name:</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Product Name" value="<%=product.name%>">
+                <input type="text" name="name" id="name" required class="form-control" placeholder="Product Name" value="<%=product.name%>">
             </div>
             <div class="mb-3">
                 <label for="img" class="form-label">Image URL:</label>
-                <input type="text" name="img" id="img" class="form-control" placeholder="Product Image url" value="<%=product.img%>">
+                <input type="text" name="img" id="img" required class="form-control" placeholder="Product Image url" value="<%=product.img%>">
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price:</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">$</span>
-                    <input type="number" name="price" id="price" class="form-control" placeholder="Price (to the nearest dollar)" value="<%=product.price%>">
+                    <input type="number" name="price" required id="price" class="form-control" placeholder="Price (to the nearest dollar)" value="<%=product.price%>">
                 </div>
             </div>
             <div class="mb-3">
                 <label for="desc" class="form-label">Description:</label>
-                <textarea name="desc" id="desc" class="form-control" rows="5"><%=product.desc%></textarea>
+                <textarea name="desc" id="desc" required class="form-control" rows="5"><%=product.desc%></textarea>
             </div>
         
             <button type="submit" class="btn btn-sm add btn-info">Update</button>

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Review = require('./review');
 
 const productSchema = mongoose.Schema({
     name:{
@@ -29,6 +30,13 @@ const productSchema = mongoose.Schema({
 
     
 });
+
+//Mongooose middleware function to delete all the associated reviews of a product
+productSchema.post('findOneAndDelete', async function(product){
+    if(product.reviews.length>0){
+        await Review.deleteMany({_id:{$in: product.reviews}});
+    }
+})
 
 
 const Product = mongoose.model('Product',productSchema);
