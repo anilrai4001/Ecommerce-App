@@ -21,3 +21,7 @@ main{
 .add:hover,.btn-sm:hover{
     color: white;
 }
+
+footer{
+    background-color: var(--main-color);
+}
