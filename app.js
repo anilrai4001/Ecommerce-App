@@ -89,7 +89,7 @@ app.use(productApis);
 app.use(cartRoutes);
 
 
-const port = 3000;
+const port = process.env.PORT;
 
 app.listen(port, () => {
     console.log(`server running at port ${port}`);
