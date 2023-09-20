@@ -12,7 +12,9 @@ router.get('/user/cart',isLoggedIn, async(req, res) => {
 
     const totalAmount = user.cart.reduce((sum, curr) => sum + curr.price, 0);
 
-    res.render('cart/cart', { user ,totalAmount});
+    const productInfo = user.cart.map((p) => p.desc).join(',');
+
+    res.render('cart/cart', { user ,totalAmount,productInfo});
 })
 
 

@@ -25,16 +25,16 @@
         <div class="col-lg-4">
             <ul class="list-group">
                 <% for(let item of user.cart) {%>
-                    <li class="list-group-item d-flex justify-content-between"><span class="fw-bold"><%=item.name%></span>$ <%=item.price%></li>
+                    <li class="list-group-item"><span class="fw-bold"><%=item.name%> - </span>&#8377; <%=item.price%> <span></span></li>
                 <% } %> 
-                <li class="list-group-item d-flex justify-content-between fw-bold"><span>Total Amount</span>$ <%=totalAmount%></li>
+                <li class="list-group-item fw-bold">Total Amount : &#8377; <%=totalAmount%></li>
             </ul>
-           <button class="btn btn-sm btn-success my-3">Checkout</button>
+            <form>
+               <button type="submit" class="btn btn-sm btn-success my-3">Checkout</button>
+            </form>
+          
         </div>
     </div>
 
    
 </section>
-
-
-

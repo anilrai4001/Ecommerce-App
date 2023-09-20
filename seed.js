@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Product = require('./models/product');
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/shopping-app')
+mongoose.connect('mongodb+srv://anilrai4001:anilrai4001@cluster1.dl41d4t.mongodb.net/shopping-app')
     .then(() => console.log('DB Connected'))
     .catch((err) => console.log(err));
 
@@ -56,7 +56,7 @@ const products = [
 
 
 async function seedDB(){
-    await Product.deleteMany({});
+    // await Product.deleteMany({});
     await Product.insertMany(products);
     console.log('Product Seeded');
 }

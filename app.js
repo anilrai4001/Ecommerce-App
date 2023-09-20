@@ -11,17 +11,21 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
 
+
 // Routes
 const productRoutes = require('./routes/product');
 const reviewRoutes = require('./routes/review');
 const authRoutes = require('./routes/auth');
 const cartRoutes = require('./routes/cart');
 
+
+
 // APIs
 const productApis = require('./routes/api/productapi');
 
-
-mongoose.connect('mongodb://127.0.0.1:27017/shopping-app')
+require('dotenv').config(); // Load environment variables from .env file
+const dbURL = process.env.dbURL;
+mongoose.connect(dbURL)
     .then(() => console.log('DB Connected'))
     .catch((err) => console.log(err));
 
@@ -32,6 +36,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+
+
 
 
 const sessionConfig = {
@@ -83,7 +89,7 @@ app.use(productApis);
 app.use(cartRoutes);
 
 
-const port = 5000;
+const port = 3000;
 
 app.listen(port, () => {
     console.log(`server running at port ${port}`);
